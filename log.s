@@ -14,7 +14,7 @@ __main  FUNCTION
 loop	         CMP  r0,r1;
                  VDIV.F32 s4,s0,s1; -1^(n+1)*1/n
 		 VMUL.F32 s6,s6,s7; x^(n-1)*x
-		 VFMA.F32 s5,s4,s6; 
+		 VFMA.F32 s5,s4,s6; BF31721AH is stored at the end in s5, which is -0.69314730, where as log(0.5) is -0.69314718
 		 VADD.F32 s1,s1,s2; n = n+1 
 		 VMUL.F32 s0,s0,s3; alternate sign change
                  ADDLT r0,#1;		
